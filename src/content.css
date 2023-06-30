@@ -1,0 +1,63 @@
+.custom-company-card {
+    position:initial;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+.custom-company-card .custom-company-salary{
+    display:none;
+}
+.custom-company-card:hover .custom-company-salary {
+    display: block;
+}
+
+.custom-company-rating{
+    color: rgb(12, 170, 65);
+    font-weight: bold;
+    
+}
+
+.tbl, .tbl a, .custom-company-reviews{
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+table {
+    width: 400px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+  }
+
+  thead {
+    background-color: #333;
+    color: #fff;
+  }
+
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  tbody tr:hover {
+    background-color: #ddd;
+  }
+
+  .scrollable-table {
+    max-height: 400px;
+    overflow-y: scroll;
+  }
+
+  .custom-company-table .row{
+    display: flex;
+    flex: 1 1 1;
+  }
+
+  .custom-company-table {
+    margin: auto;
+  }
