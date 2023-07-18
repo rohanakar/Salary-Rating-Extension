@@ -15,11 +15,9 @@ function generateCard(source, stars, reviewCount,href) {
 }
 async function processAmbitionBox(parentNode, company) {
 
-    let children = [...parentNode.children];
-    if(children.length>0 && children[children.length-1].classList.contains("ambitionBox")){
-        children[children.length-1].remove();
-        // return;
-    }
+    let AMBTION_DIV = document.getElementById("custom-company-card-ambitionBox")
+    if(AMBTION_DIV)
+        AMBTION_DIV.remove();
 
     const cache = new CACHE('ambitionbox');  
     const ambitionbox = new AmbitionBox();
@@ -30,8 +28,10 @@ async function processAmbitionBox(parentNode, company) {
     }
     let salary = await ambitionbox.getSalaries(company);
     let reviews = await ambitionbox.getReviews(company);
+    
     let ambitonDiv = document.createElement('div');
-    ambitonDiv.className = 'custom-company-card ambitionBox'
+    ambitonDiv.className =  'custom-company-card ambitionBox';
+    ambitonDiv.id = 'custom-company-card-ambitionBox';
     ambitonDiv.innerHTML = generateCard('ambitionBox', reviews['avgRating'], kFormatter(reviews['totalCount']),ambitionbox.getUrl(company));
 
     let ambitionSalary = document.createElement('div');
