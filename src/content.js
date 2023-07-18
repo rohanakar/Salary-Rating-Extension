@@ -18,6 +18,7 @@ async function processAmbitionBox(parentNode, company) {
     let children = [...parentNode.children];
     if(children.length>0 && children[children.length-1].classList.contains("ambitionBox")){
         children[children.length-1].remove();
+        // return;
     }
 
     const cache = new CACHE('ambitionbox');  
